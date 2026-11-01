@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simple Interest Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <header>
+      <p class="eyebrow">Coursera / IBM practice project</p>
+      <h1>Simple Interest Calculator</h1>
+      <p class="lede">
+        Simple interest is the interest earned only on the original principal.
+        Enter the principal, annual rate, and time to see the interest and the total amount.
+      </p>
+    </header>
+
+    <form id="calculator" novalidate>
+      <div class="field">
+        <label for="principal">Principal (P)</label>
+        <input
+          id="principal"
+          name="principal"
+          type="number"
+          inputmode="decimal"
+          min="0"
+          step="any"
+          placeholder="1000"
+          required
+        >
+      </div>
+
+      <div class="field">
+        <label for="rate">Rate % per year (R)</label>
+        <input
+          id="rate"
+          name="rate"
+          type="number"
+          inputmode="decimal"
+          min="0"
+          step="any"
+          placeholder="5"
+          required
+        >
+      </div>
+
+      <div class="field">
+        <label for="time">Time in years (T)</label>
+        <input
+          id="time"
+          name="time"
+          type="number"
+          inputmode="decimal"
+          min="0"
+          step="any"
+          placeholder="2"
+          required
+        >
+      </div>
+
+      <p id="error" class="error" role="alert" hidden></p>
+
+      <div class="actions">
+        <button type="submit">Calculate</button>
+        <button type="reset" class="secondary">Clear</button>
+      </div>
+    </form>
+
+    <section id="results" class="results" aria-live="polite" hidden>
+      <h2>Result</h2>
+      <dl>
+        <div>
+          <dt>Simple Interest</dt>
+          <dd id="interest">—</dd>
+        </div>
+        <div>
+          <dt>Total Amount</dt>
+          <dd id="amount">—</dd>
+        </div>
+      </dl>
+      <p id="breakdown" class="breakdown"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
